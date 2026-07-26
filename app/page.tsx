@@ -24,7 +24,6 @@ const policies = [
 const timeline = [
   ["DEC 2056", "Lost the House election", "Edelstein-Powell refused to accept the result and alleged fraud."],
   ["THE CALL", "“Storm the Myrati Capitol”", "Her rhetoric became the fuse for a wave of unrest."],
-  ["9 DEAD", "Violence followed", "Ballots burned and clashes left nine Myrateg residents dead."],
   ["FEB 2058", "Convicted", "The Supreme Court found her guilty of provocation of violence."],
   ["NOW", "She wants her seat back", "Myrati deserves accountability, not chaos and lawlessness."],
 ];
