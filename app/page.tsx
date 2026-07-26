@@ -163,7 +163,7 @@ export default function Home() {
             <p className="kicker">OUR MODERATE MANIFESTO</p>
             <h2>SERIOUS ABOUT<br /><span>YOUR FUTURE.</span></h2>
           </div>
-          <p>No fantasies. No vendettas. A practical programme for a safer, fairer, more confident Myrati.</p>
+          <p>No fantasies. No vendettas. A practical program for a safer, fairer, more confident Myrati.</p>
         </div>
         <div className="policy-grid">
           {policies.map((policy, index) => (
