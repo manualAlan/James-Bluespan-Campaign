@@ -14,7 +14,7 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Moderate Reform | Don't Go Back",
+  title: "JB Stoner 2060 | Don't Go Back",
   description: "A moderate manifesto for a safer, fairer, more confident Myrati.",
 };
 

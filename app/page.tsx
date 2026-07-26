@@ -37,9 +37,8 @@ export default function Home() {
       </div>
 
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="Moderate Reform home">
+        <a className="brand" href="#top" aria-label="JB Stoner 2060 home">
           <img className="brand-logo" src="/images/mr-logo.png" alt="" />
-          <span>MODERATE <b>REFORM</b></span>
         </a>
         <nav aria-label="Main navigation">
           <a href="#record">The record</a>
@@ -200,9 +199,8 @@ export default function Home() {
       </section>
 
       <footer>
-        <a className="brand footer-brand" href="#top">
+        <a className="brand footer-brand" href="#top" aria-label="JB Stoner 2060 home">
           <img className="brand-logo" src="/images/mr-logo.png" alt="" />
-          <span>MODERATE <b>REFORM</b></span>
         </a>
         <div className="imprint">Friends of JB Stoner, 23021, Port Aaron.</div>
       </footer>

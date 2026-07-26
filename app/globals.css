@@ -67,7 +67,7 @@ button, input { font: inherit; }
   letter-spacing: .03em;
 }
 .brand b { color: var(--red); }
-.brand-logo { width: 46px; height: 38px; object-fit: contain; }
+.brand-logo { width: 72px; height: 40px; object-fit: contain; object-position: left center; }
 nav { display: flex; align-items: center; gap: 28px; font-size: 11px; text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
 nav a { opacity: .75; transition: opacity .2s; }
 nav a:hover { opacity: 1; }
