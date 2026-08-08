@@ -14,8 +14,8 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "JB Stoner 2060 | Don't Go Back",
-  description: "A moderate manifesto for a safer, fairer, more confident Myrati.",
+  title: "James Bluespan | Chasmia, Forward",
+  description: "Proven leadership. Sound governance. A stronger Chasmia.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
