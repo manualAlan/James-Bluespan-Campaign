@@ -4,7 +4,7 @@ export const metadata = {
 };
 
 const charges = [
-  ["01", "The fare cap fiasco", "Cheap buses at the border. Commuters arriving on time. Where does it end?"],
+  ["01", "The water standoff", "He hoarded water during a natural crisis—turning an emergency into a political weapon."],
   ["02", "Flags, flags, flags", "Another identity rule before breakfast—and somehow still no rule against bad ideas."],
   ["03", "The policy roulette", "Communes on Monday. Tax cuts on Tuesday. A National Guard vanity parade by Friday."],
 ];
@@ -16,7 +16,6 @@ export default function KalahooskaPage() {
         <a className="wordmark" href="/" aria-label="Back to James Bluespan home">
           <span className="monogram" aria-hidden="true">JB</span><span>James Bluespan</span>
         </a>
-        <span className="satire-tag">Fictional campaign satire</span>
         <a className="back-link" href="/">← Back to sanity</a>
       </header>
 
@@ -24,20 +23,19 @@ export default function KalahooskaPage() {
         <div className="warning-tape top" aria-hidden="true">CAUTION: KALAHOOSKA NEXT DOOR • CAUTION: KALAHOOSKA NEXT DOOR •</div>
         <div className="danger-copy">
           <p className="alert-kicker"><span>!</span> An extremely serious briefing</p>
-          <h1>Andy<br /><em>Burnham.</em></h1>
-          <p className="danger-deck">One man. One border. Far too many bus-fare opinions.</p>
+          <h1>Andy<br /><b>Hussein</b><br /><em>Burnham.</em></h1>
+          <p className="danger-deck">Would you trust him with your grandmother?</p>
           <a href="#evidence" className="danger-button">Inspect the “evidence” <span>↓</span></a>
         </div>
         <div className="burnham-shot">
           <div className="target-rings" aria-hidden="true" />
           <img src="/images/andy-burnham.jpeg" alt="Andy Burnham, used in a fictional satirical campaign page" />
-          <span className="photo-stamp">RADICAL?<small>Our graphics team says yes</small></span>
+          <span className="photo-stamp">RADICAL?</span>
         </div>
-        <p className="fiction-note">PARODY • The setting, office, and claims on this page are fictional.</p>
       </section>
 
       <section className="panic-strip" aria-label="Satirical warning">
-        <strong>WOKE.</strong><strong>BROKE.</strong><strong>HAS A BUS TIMETABLE.</strong>
+        <strong>WOKE.</strong><strong>BROKE.</strong><strong>SUPPORTS TERRORISM.</strong>
       </section>
 
       <section className="case-file" id="evidence">
@@ -52,18 +50,19 @@ export default function KalahooskaPage() {
               <span>{number}</span><div><h3>{title}</h3><p>{copy}</p></div><b>ALARMING*</b>
             </article>
           ))}
-          <small>*According to a campaign leaflet printed in very large type.</small>
         </div>
       </section>
 
       <section className="contrast">
-        <div className="quote-card">
-          <span>BLUESPAN, PROBABLY</span>
-          <blockquote>“Okay, seriously—<em>Argus who?</em>”</blockquote>
+        <div className="puppet-card">
+          <span className="puppet-label">THE KALAHOOSKAN CANDIDATE?</span>
+          <img src="/images/argus.png" alt="Argus Driscoll, a fictional candidate" />
+          <strong>ARGUS<br />DRISCOLL</strong>
         </div>
         <div className="contrast-copy">
-          <p>While Kalahooska experiments with personality politics, Chasmia has a wealth fund, lower taxes, record education investment, and power for a generation.</p>
-          <h2>Less drama.<br /><em>More dams.</em></h2>
+          <p>Twenty-seven. No regional budget. No record of balancing schools, energy, safety, taxation, and long-term stability. So whose hand is really on the strings?</p>
+          <h2>Burnham’s<br /><em>puppet?</em></h2>
+          <p className="rejection-copy">Argus brings the politics of Kalahooska to Chasmia: personality over competence, slogans over stewardship. Reject the proxy. Reject the danger next door.</p>
           <a href="/#record">See the actual record →</a>
         </div>
       </section>
@@ -75,7 +74,7 @@ export default function KalahooskaPage() {
       </section>
 
       <footer className="danger-footer">
-        <span>Fictional satire—not a statement of real-world fact.</span>
+        <span>In-game political fiction; claims concern fictional characters and events.</span>
         <small>Paid for by Bluespan for Chasmia</small>
       </footer>
     </main>

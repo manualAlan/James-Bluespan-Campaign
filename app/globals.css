@@ -72,7 +72,7 @@ footer small { justify-self:end; font-size:8px; text-transform:uppercase; letter
 
 /* Kalahooska satire */
 .danger-page { --acid:#e6ff34; --alarm:#ff482d; --black:#10100f; background:#e9e3d5; color:var(--black); }
-.danger-nav { height:78px; padding:0 clamp(20px,5vw,72px); background:var(--black); color:#fff; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; position:absolute; inset:0 0 auto; z-index:8; }
+.danger-nav { height:78px; padding:0 clamp(20px,5vw,72px); background:var(--black); color:#fff; display:grid; grid-template-columns:1fr auto; align-items:center; position:absolute; inset:0 0 auto; z-index:8; }
 .danger-nav .back-link { justify-self:end; text-transform:uppercase; letter-spacing:.12em; font-size:10px; font-weight:800; }
 .satire-tag { color:var(--acid); border:1px solid rgba(230,255,52,.5); padding:8px 11px; text-transform:uppercase; letter-spacing:.15em; font-size:8px; font-weight:900; }
 .danger-hero { min-height:760px; height:100vh; max-height:920px; position:relative; overflow:hidden; background:var(--alarm); display:grid; grid-template-columns:1fr 1fr; padding-top:78px; }
@@ -84,6 +84,7 @@ footer small { justify-self:end; font-size:8px; text-transform:uppercase; letter
 .alert-kicker span { width:28px; height:28px; display:grid; place-items:center; border-radius:50%; background:var(--black); color:var(--acid); font-size:15px; }
 .danger-page h1,.danger-page h2 { font-family:var(--font-display); text-transform:uppercase; letter-spacing:-.055em; line-height:.8; margin:0; }
 .danger-page h1 { font-size:clamp(83px,11.5vw,170px); color:var(--black); }
+.danger-page h1 b { display:block; color:#fff; font-size:.48em; line-height:.85; letter-spacing:.08em; }
 .danger-page h1 em { color:var(--acid); font-style:normal; -webkit-text-stroke:2px var(--black); paint-order:stroke fill; }
 .danger-deck { max-width:430px; font:700 clamp(18px,2vw,27px)/1.15 var(--font-display); text-transform:uppercase; margin:28px 0 32px; }
 .danger-button { display:inline-flex; gap:50px; justify-content:space-between; background:var(--black); color:#fff; padding:17px 19px; text-transform:uppercase; letter-spacing:.13em; font-size:10px; font-weight:900; box-shadow:7px 7px 0 var(--acid); }
@@ -115,7 +116,13 @@ footer small { justify-self:end; font-size:8px; text-transform:uppercase; letter
 .quote-card>span { color:var(--acid); font-size:9px; font-weight:900; letter-spacing:.18em; }
 .quote-card blockquote { margin:45px 0 5px; font:700 clamp(42px,5vw,74px)/.95 var(--font-display); text-transform:uppercase; }
 .quote-card blockquote em { color:var(--alarm); font-style:normal; }
+.puppet-card { min-height:520px; position:relative; overflow:hidden; border:2px solid var(--acid); background:linear-gradient(155deg,#3b4e49,#121413); transform:rotate(-2deg); box-shadow:14px 14px 0 var(--alarm); }
+.puppet-card:before { content:""; position:absolute; inset:0; background:repeating-linear-gradient(115deg,transparent 0 70px,rgba(230,255,52,.06) 71px 73px); }
+.puppet-card img { position:absolute; inset:auto 0 0; width:100%; height:93%; object-fit:contain; object-position:center bottom; z-index:1; }
+.puppet-label { position:absolute; z-index:3; top:22px; left:22px; color:var(--acid); font-size:9px; font-weight:900; letter-spacing:.18em; }
+.puppet-card strong { position:absolute; z-index:3; left:24px; bottom:20px; color:#fff; font:900 clamp(50px,6vw,82px)/.75 var(--font-display); letter-spacing:-.04em; text-shadow:0 3px 15px #000; }
 .contrast-copy>p { max-width:570px; color:rgba(255,255,255,.65); line-height:1.7; }
+.contrast-copy .rejection-copy { margin:-18px 0 35px; color:rgba(255,255,255,.8); }
 .contrast-copy h2 { margin:40px 0; font-size:clamp(60px,7vw,104px); }.contrast-copy h2 em { color:var(--acid); font-style:normal; }
 .contrast-copy>a { color:var(--acid); border-bottom:1px solid var(--acid); padding-bottom:6px; text-transform:uppercase; letter-spacing:.13em; font-size:9px; font-weight:900; }
 .final-warning { background:var(--alarm); padding:105px 24px; text-align:center; }
