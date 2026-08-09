@@ -23,7 +23,7 @@ export default function KalahooskaPage() {
         <div className="warning-tape top" aria-hidden="true">CAUTION: KALAHOOSKA NEXT DOOR • CAUTION: KALAHOOSKA NEXT DOOR •</div>
         <div className="danger-copy">
           <p className="alert-kicker"><span>!</span> An extremely serious briefing</p>
-          <h1><span className="andy">ANDY</span> <b>HUSSEIN</b> <em><span className="burn">BURN</span><span className="ham">ham</span></em></h1>
+          <h1><span className="andy">ANDY</span><b>HUSSEIN</b><em><span className="burn">BURN</span><span className="ham">ham</span></em></h1>
           <p className="danger-deck">Would you trust him with your grandmother?</p>
           <a href="#evidence" className="danger-button">Inspect the “evidence” <span>↓</span></a>
         </div>
