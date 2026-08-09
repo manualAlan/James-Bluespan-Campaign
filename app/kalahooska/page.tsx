@@ -58,8 +58,7 @@ export default function KalahooskaPage() {
       </section>
 
       <section className="titan-attack" aria-label="Stop Andy Burnham campaign graphic">
-        <img className="titan-scene" src="/images/attack-on-titan-scene.jpg" alt="A fiery giant looming over a walled city" />
-        <img className="titan-head" src="/images/andy-burnham-head.jpeg" alt="Andy Burnham" />
+        <img className="titan-scene" src="/images/attack-on-titan-scene.png" alt="Andy Burnham depicted as a fiery giant looming over a walled city" />
         <div className="titan-shade" aria-hidden="true" />
         <h2><span>STOP ANDY</span><strong>BURN-’EM</strong></h2>
       </section>
