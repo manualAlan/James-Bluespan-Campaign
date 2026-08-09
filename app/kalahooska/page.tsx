@@ -1,6 +1,6 @@
 export const metadata = {
   title: "The Kalahooska File | William Douglas Davis",
-  description: "Kalahooska is exporting its danger. Is Chasmia prepared?",
+  description: "Andy Burnham is coming. Is Kalahooska prepared?",
 };
 
 const charges = [
