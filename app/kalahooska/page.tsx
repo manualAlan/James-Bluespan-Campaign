@@ -17,7 +17,10 @@ export default function KalahooskaPage() {
         <a className="wordmark" href="/" aria-label="Back to James Bluespan home">
           <span className="monogram" aria-hidden="true">JB</span><span>James Bluespan</span>
         </a>
-        <a className="back-link" href="/">← Back to sanity</a>
+        <nav className="danger-links" aria-label="Campaign links">
+          <a className="elect-link" href="https://manualalan.github.io/davis-for-kalahooska/">← Elect change</a>
+          <a className="back-link" href="/">← Back to sanity</a>
+        </nav>
       </header>
 
       <section className="danger-hero">
