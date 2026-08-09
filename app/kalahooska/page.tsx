@@ -4,8 +4,8 @@ export const metadata = {
 };
 
 const charges = [
-  ["01", "The water standoff", "He hoarded water during a natural crisis—turning an emergency into a political weapon."],
-  ["02", "Flags, flags, flags", "Another identity rule before breakfast—and somehow still no rule against bad ideas."],
+  ["01", "The water standoff", "He hoarded water during a natural crisis, turning an emergency into a political weapon."],
+  ["02", "Flags, flags, flags", "Another identity rule before breakfast, and somehow still no rule against bad ideas."],
   ["03", "The policy roulette", "Communes on Monday. Tax cuts on Tuesday. A National Guard vanity parade by Friday."],
 ];
 
@@ -23,7 +23,7 @@ export default function KalahooskaPage() {
         <div className="warning-tape top" aria-hidden="true">CAUTION: KALAHOOSKA NEXT DOOR • CAUTION: KALAHOOSKA NEXT DOOR •</div>
         <div className="danger-copy">
           <p className="alert-kicker"><span>!</span> An extremely serious briefing</p>
-          <h1>Andy<br /><b>Hussein</b><br /><em>Burnham.</em></h1>
+          <h1><span className="andy">ANDY</span> <b>HUSSEIN</b> <em><span className="burn">BURN</span><span className="ham">ham</span></em></h1>
           <p className="danger-deck">Would you trust him with your grandmother?</p>
           <a href="#evidence" className="danger-button">Inspect the “evidence” <span>↓</span></a>
         </div>
@@ -60,7 +60,7 @@ export default function KalahooskaPage() {
           <strong>ARGUS<br />DRISCOLL</strong>
         </div>
         <div className="contrast-copy">
-          <p>Twenty-seven. No regional budget. No record of balancing schools, energy, safety, taxation, and long-term stability. So whose hand is really on the strings?</p>
+          <p>Twenty-seven. No experience. No track record. Whose hand is <strong>REALLY</strong> on the strings?</p>
           <h2>Burnham’s<br /><em>puppet?</em></h2>
           <p className="rejection-copy">Argus brings the politics of Kalahooska to Chasmia: personality over competence, slogans over stewardship. Reject the proxy. Reject the danger next door.</p>
           <a href="/#record">See the actual record →</a>
@@ -68,13 +68,13 @@ export default function KalahooskaPage() {
       </section>
 
       <section className="final-warning">
-        <p>Protect Chasmia from the terrifying prospect of</p>
-        <h2>reasonably<br />priced bus fares.</h2>
+        <p>The Kalahooskan program</p>
+        <h2>WOKE<br />BROKE<br />TERRORISM</h2>
         <a href="/#join">Stand with James <span>↗</span></a>
       </section>
 
       <footer className="danger-footer">
-        <span>In-game political fiction; claims concern fictional characters and events.</span>
+        <span>Fictional game depiction.</span>
         <small>Paid for by Bluespan for Chasmia</small>
       </footer>
     </main>
