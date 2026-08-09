@@ -47,7 +47,7 @@ export default function KalahooskaPage() {
         <div className="charge-list">
           {charges.map(([number, title, copy]) => (
             <article key={number}>
-              <span>{number}</span><div><h3>{title}</h3><p>{copy}</p></div><b>IN-GAME CLAIM</b>
+              <span>{number}</span><div><h3>{title}</h3><p>{copy}</p></div>
             </article>
           ))}
         </div>
@@ -74,7 +74,6 @@ export default function KalahooskaPage() {
       </section>
 
       <footer className="danger-footer">
-        <span>Fictional game depiction.</span>
         <small>Paid for by Bluespan for Chasmia</small>
       </footer>
     </main>
