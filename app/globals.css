@@ -139,7 +139,9 @@ footer small { justify-self:end; font-size:8px; text-transform:uppercase; letter
 .final-warning h2 span:nth-child(1) { color:var(--acid); }
 .final-warning h2 span:nth-child(2) { color:var(--black); }
 .final-warning h2 span:nth-child(3) { color:#76151b; -webkit-text-stroke:1px #2b090b; paint-order:stroke fill; }
-.final-warning>a { display:inline-flex; gap:55px; background:var(--acid); color:var(--black); border:2px solid var(--black); padding:17px 20px; box-shadow:7px 7px 0 var(--black); text-transform:uppercase; letter-spacing:.15em; font-size:10px; font-weight:900; }
+.final-actions { display:flex; justify-content:center; align-items:stretch; gap:18px; flex-wrap:wrap; }
+.final-actions a { width:min(100%,260px); min-height:54px; display:flex; align-items:center; justify-content:space-between; gap:24px; background:var(--acid); color:var(--black); border:2px solid var(--black); padding:17px 20px; box-shadow:7px 7px 0 var(--black); text-transform:uppercase; letter-spacing:.15em; font-size:10px; font-weight:900; text-align:left; }
+.final-actions a:nth-child(2) { background:var(--black); color:var(--acid); box-shadow:7px 7px 0 #76151b; }
 .danger-footer { background:var(--black); color:#fff; padding:30px clamp(24px,7vw,110px); display:flex; justify-content:space-between; gap:20px; font-size:8px; text-transform:uppercase; letter-spacing:.12em; opacity:1; }
 .danger-footer span,.danger-footer small { opacity:.55; }
 @media(max-width:800px){.danger-nav{grid-template-columns:1fr auto}.satire-tag{display:none}.danger-hero{grid-template-columns:1fr;min-height:760px}.burnham-shot{position:absolute;inset:78px 0 0 32%;clip-path:none;opacity:.62}.burnham-shot:after{background:linear-gradient(90deg,var(--alarm),rgba(255,72,45,.68) 40%,rgba(255,72,45,.1)),linear-gradient(0deg,var(--alarm),transparent 40%)}.danger-copy{max-width:620px}.danger-page h1{font-size:clamp(68px,14vw,104px)}.photo-stamp{font-size:29px}.panic-strip{grid-template-columns:1fr}.panic-strip strong{border-right:0;border-bottom:2px solid var(--black)}.case-file,.contrast{grid-template-columns:1fr;gap:70px}}

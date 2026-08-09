@@ -78,7 +78,10 @@ export default function KalahooskaPage() {
       <section className="final-warning">
         <p>The Kalahooskan program</p>
         <h2><span>WOKE</span><span>BROKE</span><span>TERRORISM</span></h2>
-        <a href="/#join">Stand with James <span>↗</span></a>
+        <div className="final-actions">
+          <a href="/#join">Stand with James <span>↗</span></a>
+          <a href="https://manualalan.github.io/davis-for-kalahooska/">Vote out Burnham <span>↗</span></a>
+        </div>
       </section>
 
       <footer className="danger-footer">
