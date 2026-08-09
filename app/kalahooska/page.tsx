@@ -64,7 +64,7 @@ export default function KalahooskaPage() {
       </section>
 
       <section className="final-warning">
-        <p>The Kalahooskan program</p>
+        <p>The Burn-'Em program</p>
         <h2><span>WOKE</span><span>BROKE</span><span>TERRORISM</span></h2>
         <div className="final-actions">
           <a href="https://manualalan.github.io/davis-for-kalahooska/">Vote out Burnham <span>↗</span></a>
