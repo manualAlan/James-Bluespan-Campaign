@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "The Kalahooska File | James Bluespan& William Douglas Davis",
+  title: "The Kalahooska File | William Douglas Davis",
   description: "Kalahooska is exporting its danger. Is Chasmia prepared?",
 };
 
@@ -15,16 +15,12 @@ export default function KalahooskaPage() {
     <main className="danger-page">
       <header className="danger-nav">
         <div className="campaign-wordmarks">
-          <a className="wordmark" href="/" aria-label="Back to James Bluespan home">
-            <span className="monogram" aria-hidden="true">JB</span><span>James Bluespan</span>
-          </a>
           <a className="wordmark davis-wordmark" href="https://manualalan.github.io/davis-for-kalahooska/" aria-label="Visit William Douglas Davis campaign website">
             <span className="monogram" aria-hidden="true">WD</span><span>William Douglas Davis</span>
           </a>
         </div>
         <nav className="danger-links" aria-label="Campaign links">
           <a className="elect-link" href="https://manualalan.github.io/davis-for-kalahooska/">← Elect change</a>
-          <a className="back-link" href="/">← Back to sanity</a>
         </nav>
       </header>
 
@@ -61,31 +57,23 @@ export default function KalahooskaPage() {
         </div>
       </section>
 
-      <section className="contrast">
-        <div className="puppet-card">
-          <span className="puppet-label">THE KALAHOOSKAN CANDIDATE?</span>
-          <img src="/images/argus.png" alt="Argus Driscoll, a fictional candidate" />
-          <strong>ARGUS<br />DRISCOLL</strong>
-        </div>
-        <div className="contrast-copy">
-          <p>Twenty-seven. No experience. No track record. Whose hand is <strong>REALLY</strong> on the strings?</p>
-          <h2>Burnham’s<br /><em>puppet?</em></h2>
-          <p className="rejection-copy">Argus brings the politics of Kalahooska to Chasmia: personality over competence, slogans over stewardship. Reject the proxy. Reject the danger next door.</p>
-          <a href="/#record">See the actual record →</a>
-        </div>
+      <section className="titan-attack" aria-label="Stop Andy Burnham campaign graphic">
+        <img className="titan-scene" src="/images/attack-on-titan-scene.jpg" alt="A fiery giant looming over a walled city" />
+        <img className="titan-head" src="/images/andy-burnham-head.jpeg" alt="Andy Burnham" />
+        <div className="titan-shade" aria-hidden="true" />
+        <h2><span>STOP ANDY</span><strong>BURN-’EM</strong></h2>
       </section>
 
       <section className="final-warning">
         <p>The Kalahooskan program</p>
         <h2><span>WOKE</span><span>BROKE</span><span>TERRORISM</span></h2>
         <div className="final-actions">
-          <a href="/#join">Stand with James <span>↗</span></a>
           <a href="https://manualalan.github.io/davis-for-kalahooska/">Vote out Burnham <span>↗</span></a>
         </div>
       </section>
 
       <footer className="danger-footer">
-        <small>Paid for by Bluespan for Chasmia and Davis for Kalahooska</small>
+        <small>Paid for by Davis for Kalahooska</small>
       </footer>
     </main>
   );
