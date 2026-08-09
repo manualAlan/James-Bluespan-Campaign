@@ -24,7 +24,7 @@ export default function KalahooskaPage() {
       </header>
 
       <section className="danger-hero">
-        <div className="warning-tape top" aria-hidden="true">CAUTION: KALAHOOSKA NEXT DOOR X THIS IS NOT A DRILL!</div>
+        <div className="warning-tape top" aria-hidden="true">CAUTION: ANDY BURNHAM LET LOOSE X THIS IS NOT A DRILL!</div>
         <div className="danger-copy">
           <p className="alert-kicker"><span>!</span> An extremely serious briefing</p>
           <h1><span className="andy">ANDY</span><b>HUSSEIN</b><em><span className="burn">BURN</span><span className="ham">ham</span></em></h1>
