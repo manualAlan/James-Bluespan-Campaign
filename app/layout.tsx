@@ -14,20 +14,8 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://manualalan.github.io/James-Bluespan-Campaign/"),
   title: "James Bluespan | Chasmia, Forward",
   description: "Proven leadership. Sound governance. A stronger Chasmia.",
-  openGraph: {
-    title: "James Bluespan | Chasmia, Forward",
-    description: "Proven leadership. Sound governance. A stronger Chasmia.",
-    images: ["/James-Bluespan-Campaign/og.png"],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "James Bluespan | Chasmia, Forward",
-    description: "Proven leadership. Sound governance. A stronger Chasmia.",
-    images: ["/James-Bluespan-Campaign/og.png"],
-  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
