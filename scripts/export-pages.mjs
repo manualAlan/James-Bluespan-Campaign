@@ -13,14 +13,23 @@ const assets = await readdir(new URL("assets/", client));
 const css = assets.find((name) => /^index-.*\.css$/.test(name));
 if (!css) throw new Error("Built stylesheet not found");
 
-const response = await fetch("http://localhost:3000/");
-let html = await response.text();
-html = html
-  .replace(/<script[\s\S]*?<\/script>/g, "")
-  .replace(/<link[^>]+(?:modulepreload|data-rsc-css-href)[^>]*\/?>(?:<\/link>)?/g, "")
-  .replace("</head>", `<link rel="stylesheet" href="./assets/${css}"></head>`)
-  .replaceAll('href="/', 'href="./')
-  .replaceAll('src="/', 'src="./');
+async function exportPage(route, output, prefix) {
+  const response = await fetch(`http://localhost:3000${route}`);
+  let html = await response.text();
+  html = html
+    .replace(/<script[\s\S]*?<\/script>/g, "")
+    .replace(/<link[^>]+(?:modulepreload|data-rsc-css-href)[^>]*\/?>(?:<\/link>)?/g, "")
+    .replace("</head>", `<link rel="stylesheet" href="${prefix}assets/${css}"></head>`)
+    .replaceAll('href="/kalahooska"', `href="${prefix}kalahooska/"`)
+    .replaceAll('href="/#', `href="${prefix}#`)
+    .replaceAll('href="/"', `href="${prefix}"`)
+    .replaceAll('href="/', `href="${prefix}`)
+    .replaceAll('src="/', `src="${prefix}`);
+  const target = new URL(output, docs);
+  await mkdir(new URL("./", target), { recursive: true });
+  await writeFile(target, html);
+}
 
-await writeFile(new URL("index.html", docs), html);
+await exportPage("/", "index.html", "./");
+await exportPage("/kalahooska", "kalahooska/index.html", "../");
 await writeFile(new URL(".nojekyll", docs), "");

@@ -33,6 +33,7 @@ export default function Home() {
         <nav aria-label="Main navigation">
           <a href="#record">Record</a>
           <a href="#priorities">Priorities</a>
+          <a href="/kalahooska">The Kalahooska file</a>
           <a className="nav-button" href="#join">Join us</a>
         </nav>
       </header>
