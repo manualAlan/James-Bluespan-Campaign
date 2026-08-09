@@ -14,9 +14,14 @@ export default function KalahooskaPage() {
   return (
     <main className="danger-page">
       <header className="danger-nav">
-        <a className="wordmark" href="/" aria-label="Back to James Bluespan home">
-          <span className="monogram" aria-hidden="true">JB</span><span>James Bluespan</span>
-        </a>
+        <div className="campaign-wordmarks">
+          <a className="wordmark" href="/" aria-label="Back to James Bluespan home">
+            <span className="monogram" aria-hidden="true">JB</span><span>James Bluespan</span>
+          </a>
+          <a className="wordmark davis-wordmark" href="https://manualalan.github.io/davis-for-kalahooska/" aria-label="Visit William Douglas Davis campaign website">
+            <span className="monogram" aria-hidden="true">WD</span><span>William Douglas Davis</span>
+          </a>
+        </div>
         <nav className="danger-links" aria-label="Campaign links">
           <a className="elect-link" href="https://manualalan.github.io/davis-for-kalahooska/">← Elect change</a>
           <a className="back-link" href="/">← Back to sanity</a>
