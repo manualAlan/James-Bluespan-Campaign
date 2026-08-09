@@ -74,7 +74,7 @@ export default function KalahooskaPage() {
       </section>
 
       <footer className="danger-footer">
-        <small>Paid for by Bluespan for Chasmia</small>
+        <small>Paid for by Bluespan for Chasmia and Davis for Kalahooska</small>
       </footer>
     </main>
   );
