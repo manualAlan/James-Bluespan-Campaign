@@ -7,7 +7,7 @@ const charges = [
   ["01", "The water standoff", "He hoarded water during a natural crisis, turning an emergency into a political weapon."],
   ["02", "Flags, flags, flags", "Another identity rule before breakfast, and somehow still no rule against bad ideas."],
   ["03", "The policy roulette", "Communes on Monday. Tax cuts on Tuesday. A National Guard vanity parade by Friday."],
-  ["04", "The Capitol extremist link", "In the game’s campaign record, Burnham backed Rachel Eldeinstein after she supported the call to ‘Storm the Myrati Capitol.’"],
+  ["04", "The Capitol extremist link", "Burnham backed Rachel Eldeinstein after she supported the call to ‘Storm the Myrati Capitol.’"],
 ];
 
 export default function KalahooskaPage() {
