@@ -86,7 +86,7 @@ footer small { justify-self:end; font-size:8px; text-transform:uppercase; letter
 .danger-page h1 { display:block; white-space:normal; font-size:clamp(78px,9.5vw,142px); color:var(--black); font-weight:900; letter-spacing:-.05em; line-height:.72; text-align:left; }
 .danger-page h1 .andy,.danger-page h1 b,.danger-page h1 em { display:block; }
 .danger-page h1 b { color:var(--acid); font-size:1em; line-height:.76; letter-spacing:-.045em; }
-.danger-page h1 em { font-style:normal; font-weight:900; line-height:.8; }
+.danger-page h1 em { display:flex; align-items:baseline; width:max-content; white-space:nowrap; font-style:normal; font-weight:900; line-height:.8; }
 .danger-page h1 .burn { display:inline-block; color:transparent; -webkit-text-fill-color:transparent; background-image:url("../images/fire.jpeg"); background-position:center 48%; background-size:cover; -webkit-background-clip:text; background-clip:text; -webkit-text-stroke:1px #4f1306; paint-order:stroke fill; filter:saturate(1.35) contrast(1.2); }
 .danger-page h1 .ham { color:#ed6b25; text-transform:none; -webkit-text-stroke:1px #4f1306; paint-order:stroke fill; }
 .danger-deck { max-width:430px; font:700 clamp(18px,2vw,27px)/1.15 var(--font-display); text-transform:uppercase; margin:28px 0 32px; }
