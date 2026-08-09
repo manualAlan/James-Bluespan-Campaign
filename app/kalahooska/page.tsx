@@ -1,6 +1,6 @@
 export const metadata = {
   title: "The Kalahooska File | James Bluespan",
-  description: "A fictional campaign satire about the very dramatic danger next door.",
+  description: ", Kalahooska is exporting its danger. Is Chasmia prepared?",
 };
 
 const charges = [
