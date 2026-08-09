@@ -43,7 +43,6 @@ export default function KalahooskaPage() {
         <div className="case-intro">
           <p className="file-label">CASE FILE: K-0001</p>
           <h2>The danger<br />is <em>mildly</em><br />organized.</h2>
-          <p>Our investigators opened the file. What they found was shocking: policies. Lots of them. Some even contradicted other policies.</p>
         </div>
         <div className="charge-list">
           {charges.map(([number, title, copy]) => (
@@ -70,7 +69,7 @@ export default function KalahooskaPage() {
 
       <section className="final-warning">
         <p>The Kalahooskan program</p>
-        <h2>WOKE<br />BROKE<br />TERRORISM</h2>
+        <h2><span>WOKE</span><span>BROKE</span><span>TERRORISM</span></h2>
         <a href="/#join">Stand with James <span>↗</span></a>
       </section>
 

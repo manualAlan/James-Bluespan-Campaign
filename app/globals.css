@@ -130,7 +130,11 @@ footer small { justify-self:end; font-size:8px; text-transform:uppercase; letter
 .contrast-copy>a { color:var(--acid); border-bottom:1px solid var(--acid); padding-bottom:6px; text-transform:uppercase; letter-spacing:.13em; font-size:9px; font-weight:900; }
 .final-warning { background:var(--alarm); padding:105px 24px; text-align:center; }
 .final-warning>p { text-transform:uppercase; font-weight:900; letter-spacing:.13em; font-size:10px; }
-.final-warning h2 { font-size:clamp(72px,11vw,170px); max-width:1100px; margin:25px auto 45px; text-align:center; color:var(--black); }.final-warning h2::first-line { color:var(--acid); }
+.final-warning h2 { font-size:clamp(72px,11vw,170px); max-width:1100px; margin:25px auto 45px; text-align:center; color:var(--black); }
+.final-warning h2 span { display:block; }
+.final-warning h2 span:nth-child(1) { color:var(--acid); }
+.final-warning h2 span:nth-child(2) { color:var(--black); }
+.final-warning h2 span:nth-child(3) { color:#76151b; -webkit-text-stroke:1px #2b090b; paint-order:stroke fill; }
 .final-warning>a { display:inline-flex; gap:55px; background:var(--acid); color:var(--black); border:2px solid var(--black); padding:17px 20px; box-shadow:7px 7px 0 var(--black); text-transform:uppercase; letter-spacing:.15em; font-size:10px; font-weight:900; }
 .danger-footer { background:var(--black); color:#fff; padding:30px clamp(24px,7vw,110px); display:flex; justify-content:space-between; gap:20px; font-size:8px; text-transform:uppercase; letter-spacing:.12em; opacity:1; }
 .danger-footer span,.danger-footer small { opacity:.55; }
