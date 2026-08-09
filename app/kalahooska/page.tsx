@@ -1,6 +1,6 @@
 export const metadata = {
   title: "The Kalahooska File | James Bluespan& William Douglas Davis",
-  description: ", Kalahooska is exporting its danger. Is Chasmia prepared?",
+  description: "Kalahooska is exporting its danger. Is Chasmia prepared?",
 };
 
 const charges = [
