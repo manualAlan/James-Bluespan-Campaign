@@ -14,8 +14,8 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "James Bluespan | Chasmia, Forward",
-  description: "Proven leadership. Sound governance. A stronger Chasmia.",
+  title: "James Bluespan 2066 | The Future Is Running",
+  description: "Re-elect James Bluespan in 2066. Ten years of delivery—and a systems-level plan for Chasmia's future.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
