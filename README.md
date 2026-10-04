@@ -1,6 +1,6 @@
 # James Bluespan 2070 — Chasmia, Forward
 
-A forest-green, cream, and gold campaign site for James Bluespan’s 2070 re-election campaign. The home page, Meet James page, and 2070 agenda use the existing Chasmia platform and local campaign images.
+A light-blue campaign site for James Bluespan’s 2070 re-election campaign. The uncluttered home page, Meet James page, and 2070 agenda use the existing Chasmia platform and local campaign images.
 
 [View the live campaign site](https://manualalan.github.io/James-Bluespan-Campaign/)
 

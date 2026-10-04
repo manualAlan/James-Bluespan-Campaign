@@ -13,13 +13,13 @@ export default function About() {
       <main id="main-content">
         <section className="campaign-page-hero about-hero">
           <div className="campaign-container campaign-split">
-            <div><p className="campaign-eyebrow">Governor of Chasmia</p><h1>Meet James<br /><span>Bluespan.</span></h1><p>Proven leadership. A belief in public investment. A commitment to Chasmia’s future.</p><a className="campaign-button" href={sitePath("/agenda/")}>The 2070 agenda <span aria-hidden="true">↗</span></a></div>
+            <div><p className="campaign-eyebrow">Governor of Chasmia</p><h1>Meet James<br /><span>Bluespan.</span></h1><p>Proven leadership. A belief in public investment. A commitment to Chasmia’s future.</p><a className="campaign-button" href={sitePath("/agenda/")}>The 2070 agenda</a></div>
             <figure className="about-portrait"><img src={asset("/images/james-bluespan.webp")} alt="Governor James Bluespan" width="648" height="1000" fetchPriority="high" /></figure>
           </div>
         </section>
         <section className="campaign-section" aria-labelledby="about-record-title">
           <div className="campaign-container campaign-about-content">
-            <div className="campaign-section-heading"><p className="campaign-eyebrow">A record of delivery</p><h2 id="about-record-title">Progress with purpose.</h2><div className="gold-rule" /><p>James Bluespan’s record combines disciplined public finances with ambitious investment in the people and places that make Chasmia thrive.</p></div>
+            <div className="campaign-section-heading"><p className="campaign-eyebrow">A record of delivery</p><h2 id="about-record-title">Progress with purpose.</h2><p>James Bluespan’s record combines disciplined public finances with ambitious investment in the people and places that make Chasmia thrive.</p></div>
             <div className="about-record-list">
               <article><span>01</span><div><h3>Balanced finances. Education first.</h3><p>The 2063 budget placed education first, increased infrastructure investment, and carried no debt-interest costs. That foundation informs the next chapter: protect public wealth and invest for the long term.</p></div></article>
               <article><span>02</span><div><h3>Practical support for families.</h3><p>A targeted levy on harmful products supports a refundable childcare boost for working families. Sports consumption and a public lottery fund free lunches for every public and charter school student.</p></div></article>
@@ -31,7 +31,7 @@ export default function About() {
         <section className="campaign-section about-connections">
           <div className="campaign-container campaign-split">
             <figure className="campaign-feature-image"><img src={asset("/images/chasair-a220.png")} alt="A ChasAir Airbus A220 in flight" width="1200" height="900" loading="lazy" /><figcaption>Connecting Chasmia to opportunity</figcaption></figure>
-            <div className="campaign-feature-copy"><p className="campaign-eyebrow">The next chapter</p><h2>Opportunity.<br />Everywhere.</h2><div className="gold-rule" /><p>The 2070 agenda builds on this foundation with a protected wealth fund, support for investment, strong schools, dependable power, and infrastructure that reaches urban and rural communities alike.</p><a className="campaign-text-link" href={sitePath("/agenda/")}>Read the full agenda <span aria-hidden="true">→</span></a></div>
+            <div className="campaign-feature-copy"><p className="campaign-eyebrow">The next chapter</p><h2>Opportunity.<br />Everywhere.</h2><p>The 2070 agenda builds on this foundation with a protected wealth fund, support for investment, strong schools, dependable power, and infrastructure that reaches urban and rural communities alike.</p><a className="campaign-text-link" href={sitePath("/agenda/")}>Read the full agenda</a></div>
           </div>
         </section>
         <GetInvolved />

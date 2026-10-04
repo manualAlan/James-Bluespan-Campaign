@@ -22,7 +22,7 @@ export default function Agenda() {
         <section className="campaign-section agenda-section" aria-label="The 2070 platform">
           <div className="campaign-container">
             <nav className="agenda-index" aria-label="Agenda topics">
-              {priorities.map((priority, index) => <a key={priority.id} href={`#${priority.id}`}><span>0{index + 1}</span>{priority.title}<span aria-hidden="true">↓</span></a>)}
+              {priorities.map((priority, index) => <a key={priority.id} href={`#${priority.id}`}><span>0{index + 1}</span>{priority.title}</a>)}
             </nav>
             <div className="agenda-grid">
               {priorities.map((priority, index) => (
@@ -39,7 +39,7 @@ export default function Agenda() {
         </section>
         <section className="campaign-section campaign-energy-detail">
           <div className="campaign-container campaign-split">
-            <div className="campaign-feature-copy"><p className="campaign-eyebrow">Invest today. Build for tomorrow.</p><h2>Resources that<br />keep giving.</h2><div className="gold-rule" /><p>Turn finite resource wealth into permanent public capacity. Protect the fund, invest in people and places, and make room for businesses to build the next generation of Chasmian prosperity.</p><a className="campaign-text-link" href={sitePath("/about/")}>See the foundation for this plan <span aria-hidden="true">→</span></a></div>
+            <div className="campaign-feature-copy"><p className="campaign-eyebrow">Invest today. Build for tomorrow.</p><h2>Resources that<br />keep giving.</h2><p>Turn finite resource wealth into permanent public capacity. Protect the fund, invest in people and places, and make room for businesses to build the next generation of Chasmian prosperity.</p><a className="campaign-text-link" href={sitePath("/about/")}>See the foundation for this plan</a></div>
             <figure className="campaign-feature-image"><img src={asset("/images/ap1000.jpg")} alt="AP1000 nuclear reactor units, the technology in the Verasul energy agenda" width="1200" height="900" loading="lazy" /><figcaption>Modern nuclear technology · Verasul energy agenda</figcaption></figure>
           </div>
         </section>

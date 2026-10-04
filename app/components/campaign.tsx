@@ -17,9 +17,9 @@ export function CampaignHeader({ active }: { active: string }) {
           <nav className="campaign-desktop-nav" aria-label="Main navigation">
             {links.map((link) => <a key={link.id} href={sitePath(link.href)} aria-current={active === link.id ? "page" : undefined}>{link.label}</a>)}
           </nav>
-          <a className="campaign-nav-action" href="#join">Get involved <span aria-hidden="true">↗</span></a>
+          <a className="campaign-nav-action" href="#join">Get involved</a>
           <details className="campaign-mobile-nav">
-            <summary aria-label="Navigation menu"><span className="menu-lines" aria-hidden="true" /><span className="sr-only">Menu</span></summary>
+            <summary aria-label="Navigation menu">Menu</summary>
             <nav aria-label="Mobile navigation">
               {links.map((link) => <a key={link.id} href={sitePath(link.href)} aria-current={active === link.id ? "page" : undefined}>{link.label}</a>)}
               <a href="#join">Get involved</a>
@@ -39,11 +39,11 @@ export function GetInvolved() {
         <h2 id="join-title">Stand with<br />James Bluespan.</h2>
         <p>Make the case for a stronger Chasmia. Share the 2070 agenda with your community.</p>
         <div className="campaign-join-actions">
-          <button className="campaign-button" type="button" data-share-campaign hidden>Copy campaign link <span aria-hidden="true">↗</span></button>
-          <a className="campaign-button campaign-button-outline" href={asset("/bluespan-2070.svg")} download="bluespan-2070.svg">Download campaign card <span aria-hidden="true">↓</span></a>
+          <button className="campaign-button" type="button" data-share-campaign hidden>Copy campaign link</button>
+          <a className="campaign-button campaign-button-outline" href={asset("/bluespan-2070.svg")} download="bluespan-2070.svg">Download campaign card</a>
         </div>
         <p className="campaign-share-status" data-share-status role="status" aria-live="polite" />
-        <noscript><p><a className="campaign-text-link light" href={sitePath("/agenda/")}>Read and share the 2070 agenda →</a></p></noscript>
+        <noscript><p><a className="campaign-text-link light" href={sitePath("/agenda/")}>Read and share the 2070 agenda</a></p></noscript>
       </div>
     </section>
   );
@@ -61,7 +61,7 @@ export function CampaignFooter() {
         </nav>
         <div className="campaign-party"><img src={asset("/images/liberal-party.png")} alt="Liberal Party" width="38" height="38" loading="lazy" /><span>Liberal Party<br /><small>Bluespan for Chasmia</small></span></div>
       </div>
-      <div className="campaign-container campaign-footer-bottom"><small>© 2070 Bluespan for Chasmia Campaign.</small><a href="#top">Back to top <span aria-hidden="true">↑</span></a></div>
+      <div className="campaign-container campaign-footer-bottom"><small>© 2070 Bluespan for Chasmia Campaign.</small><a href="#top">Back to top</a></div>
     </footer>
   );
 }
