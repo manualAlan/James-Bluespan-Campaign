@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+  <title id="title">James Bluespan 2070 campaign card</title>
+  <desc id="desc">James Bluespan for Chasmia. A stronger Chasmia. A future we build together.</desc>
+  <rect width="1200" height="1200" fill="#1e4620"/>
+  <path d="M64 160V64h96M1040 1136h96v-96" fill="none" stroke="#d4af37" stroke-width="8"/>
+  <g fill="#fdfbf7" font-family="Arial, Helvetica, sans-serif">
+    <text x="100" y="215" font-size="26" letter-spacing="6" font-weight="700">LIBERAL PARTY · CHASMIA</text>
+    <text x="90" y="430" font-size="160" font-weight="900" letter-spacing="-8">JAMES</text>
+    <text x="90" y="585" font-size="160" font-weight="900" letter-spacing="-8">BLUESPAN</text>
+    <text x="96" y="770" font-size="160" fill="#d4af37" font-weight="900">2070.</text>
+    <text x="100" y="880" font-size="42" font-weight="700">A stronger Chasmia.</text>
+    <text x="100" y="940" font-size="42">A future we build together.</text>
+    <text x="100" y="1080" font-size="24">manualalan.github.io/James-Bluespan-Campaign/</text>
+  </g>
+</svg>

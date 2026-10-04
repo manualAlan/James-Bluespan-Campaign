@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Barlow_Condensed, Inter } from "next/font/google";
+import { Barlow_Condensed, Inter, Outfit } from "next/font/google";
 import "./globals.css";
 
 const display = Barlow_Condensed({
@@ -13,15 +13,25 @@ const sans = Inter({
   subsets: ["latin"],
 });
 
+const campaign = Outfit({
+  variable: "--font-campaign",
+  subsets: ["latin"],
+  weight: ["600", "700", "800", "900"],
+});
+
 export const metadata: Metadata = {
-  title: "James Bluespan 2066 | The Future Is Running",
-  description: "Re-elect James Bluespan in 2066. Ten years of delivery—and a systems-level plan for Chasmia's future.",
+  title: "James Bluespan 2070 | Chasmia, Forward",
+  description: "Re-elect James Bluespan in 2070. Proven leadership and a clear agenda for lasting prosperity, education, clean power, and a connected Chasmia.",
+  icons: { icon: "/favicon.svg" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${display.variable} ${sans.variable}`}>{children}</body>
+      <body className={`${display.variable} ${sans.variable} ${campaign.variable}`}>
+        {children}
+        <script src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/campaign.js`} defer />
+      </body>
     </html>
   );
 }

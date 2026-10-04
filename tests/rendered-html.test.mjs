@@ -1,91 +1,66 @@
 import assert from "node:assert/strict";
 import { access, readFile, readdir } from "node:fs/promises";
+import { dirname, join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import test from "node:test";
 
-const developmentPreviewMeta =
-  /<meta(?=[^>]*\bname=["']codex-preview["'])(?=[^>]*\bcontent=["']development["'])[^>]*>/i;
-const templateRoot = new URL("../", import.meta.url);
-const previewRoot = new URL("../app/_sites-preview/", import.meta.url);
+const docs = resolve(fileURLToPath(new URL("../docs/", import.meta.url)));
+const pages = ["index.html", "agenda/index.html", "about/index.html"];
 
-async function render() {
-  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
-  const { default: worker } = await import(workerUrl.href);
+for (const page of pages) {
+  test(`${page} exports the 2070 campaign without hydration dependencies`, async () => {
+    const html = await readFile(join(docs, page), "utf8");
+    assert.match(html, /<title>[^<]*2070[^<]*<\/title>/);
+    assert.doesNotMatch(html, /2066|Fredrick|Madden|Reno|codex-preview/);
+    assert.match(html, /id="main-content"/);
+    assert.match(html, /id="join"/);
+    assert.match(html, /<script src="(?:\.\/|\.\.\/)campaign\.js" defer><\/script>/);
+    assert.doesNotMatch(html, /type="module"|self\.__next_f|text\/x-component/);
+    assert.equal([...html.matchAll(/<h1(?:\s|>)/g)].length, 1);
 
-  return worker.fetch(
-    new Request("http://localhost/", {
-      headers: { accept: "text/html" },
-    }),
-    {
-      ASSETS: {
-        fetch: async () => new Response("Not found", { status: 404 }),
-      },
-    },
-    {
-      waitUntil() {},
-      passThroughOnException() {},
-    },
-  );
+    // Follow the actual exported URLs, including cross-page anchor links.
+    for (const match of html.matchAll(/(?:href|src)="([^"?#]+)(?:\?[^"#]*)?(?:#([^" ]+))?"/g)) {
+      const [, href, fragment] = match;
+      if (/^(https?:|mailto:|data:)/.test(href)) continue;
+      assert.ok(!href.startsWith("/"), `${page}: root-relative URL ${href}`);
+      let target = resolve(dirname(join(docs, page)), href);
+      assert.ok(target === docs || target.startsWith(`${docs}/`), `${page}: URL escapes the export`);
+      if (href.endsWith("/")) target = join(target, "index.html");
+      await access(target);
+      if (fragment && target.endsWith(".html")) {
+        const linkedHtml = await readFile(target, "utf8");
+        assert.ok(linkedHtml.includes(`id="${fragment}"`), `${href}#${fragment} has no target`);
+      }
+    }
+    for (const [, fragment] of html.matchAll(/href="#([^" ]+)"/g)) {
+      assert.ok(html.includes(`id="${fragment}"`), `${page}: missing #${fragment}`);
+    }
+    for (const [, font] of html.matchAll(/url\(([^)]+\.woff2)\)/g)) {
+      await access(resolve(dirname(join(docs, page)), font));
+    }
+  });
 }
 
-test("server-renders the starter loading skeleton", async () => {
-  const response = await render();
-  assert.equal(response.status, 200);
-  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
-
-  const html = await response.text();
-  assert.match(html, developmentPreviewMeta);
-  assert.match(html, /<title>Your site is taking shape<\/title>/i);
-  assert.match(html, /Building your site/);
-  assert.match(html, /Your site is taking shape/);
-  assert.match(
-    html,
-    /Your first version will appear here automatically when it’s ready\./,
-  );
-  assert.doesNotMatch(html, /Codex/);
-  assert.match(html, /react-loading-skeleton/);
-  assert.match(html, /role="status"/);
+test("exported CSS resolves bundled fonts beneath the GitHub Pages base path", async () => {
+  const assets = await readdir(join(docs, "assets"));
+  const stylesheets = assets.filter((file) => file.endsWith(".css"));
+  assert.ok(stylesheets.length > 0);
+  for (const file of stylesheets) {
+    const css = await readFile(join(docs, "assets", file), "utf8");
+    assert.doesNotMatch(css, /url\(["']?\/assets\//);
+    for (const [, rawUrl] of css.matchAll(/url\(([^)]+)\)/g)) {
+      const url = rawUrl.replace(/^["']|["']$/g, "");
+      if (/^(data:|https?:)/.test(url)) continue;
+      await access(resolve(docs, "assets", url));
+    }
+  }
 });
 
-test("keeps the loading skeleton scoped and disposable", async () => {
-  const [preview, css, page, layout, packageJson, files] = await Promise.all([
-    readFile(new URL("SkeletonPreview.tsx", previewRoot), "utf8"),
-    readFile(new URL("preview.css", previewRoot), "utf8"),
-    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../package.json", import.meta.url), "utf8"),
-    readdir(previewRoot),
-  ]);
-
-  assert.deepEqual(files.sort(), ["SkeletonPreview.tsx", "preview.css"]);
-  assert.match(preview, /from "react-loading-skeleton"/);
-  assert.match(preview, /baseColor="#eceae7"/);
-  assert.match(preview, /highlightColor="#f9f8f6"/);
-  assert.match(preview, /duration=\{2\.8\}/);
-  assert.match(preview, /sites-skeleton-search-placeholder/);
-  assert.match(packageJson, /"react-loading-skeleton": "3\.5\.0"/);
-
-  const shellIndex = preview.indexOf('className="sites-skeleton-shell"');
-  const statusIndex = preview.indexOf('className="sites-skeleton-status"');
-  assert.ok(shellIndex >= 0 && statusIndex > shellIndex);
-  assert.match(css, /position:\s*fixed/);
-  assert.match(css, /inset:\s*0/);
-  assert.match(css, /opacity:\s*0\.52/);
-  assert.match(css, /prefers-reduced-motion:\s*reduce/);
-  assert.doesNotMatch(css, /#020617|canvas|pets|progress/i);
-  assert.doesNotMatch(
-    preview,
-    /loading-spinner|status-mark|status-progress|canvas|cookie|random/i,
-  );
-
-  assert.match(page, /export const metadata:\s*Metadata/);
-  assert.match(page, /"codex-preview": "development"/);
-  assert.match(page, /<SkeletonPreview \/>/);
-  assert.match(layout, /title:\s*"Starter Project"/);
-  assert.doesNotMatch(layout, /codex-preview|_sites-preview|themeColor|\bViewport\b/);
-  assert.doesNotMatch(css, /(^|\s)(html|body)\s*\{/m);
-
-  await assert.rejects(
-    access(new URL("public/_sites-preview", templateRoot)),
-  );
+test("campaign download and sharing script are included in the export", async () => {
+  const card = await readFile(join(docs, "bluespan-2070.svg"), "utf8");
+  assert.match(card, /James Bluespan 2070 campaign card/);
+  const script = await readFile(join(docs, "campaign.js"), "utf8");
+  assert.match(script, /https:\/\/manualalan\.github\.io\/James-Bluespan-Campaign\//);
+  await access(join(docs, ".nojekyll"));
+  await access(join(docs, "kalahooska", "index.html"));
 });

@@ -1,4 +1,4 @@
-name: Deploy Moderate Reform site
+name: Deploy Bluespan campaign site
 
 on:
   push:

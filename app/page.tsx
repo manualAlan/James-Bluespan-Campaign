@@ -1,22 +1,87 @@
-const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
+import { CampaignFooter, CampaignHeader, GetInvolved, asset, sitePath } from "./components/campaign";
+import { priorities } from "./content";
 
-const metrics = [["14Y","proven executive leadership"],["DEBT","free — with a balanced budget"],["#1","education is the top priority"],["~4%","unemployment — Chasmia works"]];
-const systems = [
-  {code:"KG-20/25",title:"Kabuki Gardens",tag:"LIVE / LITTLEWOODS",copy:"A licensed entertainment district built for nightlife, hospitality and high-value tourism.",stat:"20% gaming · 25% services",image:"/images/kabuki-gardens.png",tone:"magenta"},
-  {code:"VICE",title:"More help per child",tag:"BONUS // FAMILY DIVIDEND",copy:"A targeted levy on harmful products adds a refundable childcare boost for working families.",stat:"The cherry on top",tone:"cyan"},
-  {code:"SCORE",title:"Lunch: fully funded",tag:"BONUS // SCHOOL DAY",copy:"Sports consumption and a public lottery fund free lunch for every public and charter student.",stat:"Every student. Every day.",tone:"lime"},
-];
-const runway = [["01","Protect the wealth fund","Save resource wealth, invest it professionally and keep it working for generations."],["02","Make Chasmia magnetic","Lower business taxes, reward long-term investment and give new firms and residents room to grow."],["03","Build everywhere","Schools, tertiary grants, city infrastructure, rural roads, broadband, water and agriculture."]];
+export default function Home() {
+  return (
+    <div className="campaign" id="top">
+      <CampaignHeader active="home" />
+      <main id="main-content">
+        <section className="campaign-hero" aria-labelledby="hero-title">
+          <div className="campaign-container hero-grid">
+            <div className="campaign-hero-copy">
+              <p className="campaign-eyebrow"><span /> Chasmia · Re-election 2070</p>
+              <h1 id="hero-title">James<br />Bluespan<span className="hero-period">.</span></h1>
+              <p className="hero-tagline">A stronger Chasmia.<br />A future we build together.</p>
+              <p className="campaign-hero-description">Proven leadership. Public investment. Lasting prosperity. Re-elect James Bluespan to keep Chasmia moving forward.</p>
+              <div className="campaign-hero-actions">
+                <a className="campaign-button" href={sitePath("/agenda/")}>Read the agenda <span aria-hidden="true">↗</span></a>
+                <a className="campaign-text-link light" href={sitePath("/about/")}>Explore the record <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+            <figure className="campaign-portrait">
+              <div className="portrait-corners">
+                <img src={asset("/images/james-bluespan.webp")} alt="Governor James Bluespan" width="648" height="1000" fetchPriority="high" />
+              </div>
+              <figcaption><span>James Bluespan</span><span>Governor of Chasmia</span></figcaption>
+            </figure>
+          </div>
+          <div className="hero-bottom campaign-container"><span>Liberal Party</span><a href="#priorities">Our 2070 priorities <span aria-hidden="true">↓</span></a><span>Chasmia, forward.</span></div>
+        </section>
 
-export default function Home(){return <main className="cyber-site" id="top">
-  <div className="noise" aria-hidden="true"/><div className="system-bar"><span>CHASMIA//GOV</span><b>2066 RE-ELECTION NETWORK</b><span className="status"><i/> SYSTEMS ONLINE</span></div>
-  <header className="cyber-nav"><a className="cyber-brand" href="#top" aria-label="James Bluespan 2066 home"><img src={asset("/images/liberal-party.png")} alt="Liberal Party"/><div>JAMES<br/><b>BLUESPAN</b></div></a><nav aria-label="Main navigation"><a href="#wins">Delivered</a><a href="#power">Energy</a><a href="#air">ChasAir</a><a href="#future">2070</a><a className="cyber-cta" href="#join">RE-ELECT // 2066</a></nav></header>
-  <section className="cyber-hero"><div className="hero-circuit" aria-hidden="true"/><div className="hero-portrait"><img src={asset("/images/james-bluespan.webp")} alt="James Bluespan"/><div className="portrait-scan"/></div><div className="hero-terminal"><div><span>LIBERAL_PARTY://EXECUTIVE</span><span>ID: JB-2066</span></div><p>GOVERNOR // CHASMIA</p><h1>THE FUTURE<br/>IS <em>RUNNING.</em></h1><p className="hero-sub">Fourteen years building a richer, smarter, more powerful Chasmia. Now scale it.</p><div className="hero-buttons"><a href="#wins">ACCESS RECORD <b>↘</b></a><a href="#future">VIEW 2070 PROTOCOL →</a></div></div><div className="hero-year" aria-hidden="true">20<br/>66</div></section>
-  <section className="metric-rail" aria-label="Key achievements">{metrics.map(([n,l],i)=><article key={l}><small>0{i+1}//OUTPUT</small><strong>{n}</strong><span>{l}</span></article>)}</section>
-  <section className="systems-section" id="wins"><div className="section-code">01 // THE RECORD</div><div className="section-title"><p>BALANCED BOOKS. BIG AMBITION.</p><h2>BUILD.<br/>DELIVER.<br/><em>REPEAT.</em></h2><div className="budget-proof"><b>2063 BUDGET</b><span>Education first</span><span>Infrastructure rising</span><span>Zero debt interest</span></div></div><div className="system-grid">{systems.map((item,i)=><article className={`system-card ${item.tone}`} key={item.code}>{item.image&&<img src={asset(item.image)} alt="Kabuki Gardens Special Entertainment District at night"/>}<div className="system-card-body"><div className="card-code"><span>{item.code}</span><b>{item.tag}</b></div><h3>{item.title}</h3><p>{item.copy}</p><strong>{item.stat}</strong></div><i aria-hidden="true">0{i+1}</i></article>)}</div></section>
-  <section className="energy-section" id="power"><figure className="energy-visual"><img src={asset("/images/ap1000.jpg")} alt="Two modern AP1000 nuclear reactor units"/><figcaption>REFERENCE SYSTEM // AP1000</figcaption></figure><div className="energy-copy"><div className="section-code">02 // POWER STACK</div><p>VERASUL ENERGY CORE</p><h2>POWER FOR<br/><em>A GENERATION.</em></h2><div className="energy-spec"><span><b>CLEAN</b> BASELOAD</span><span><b>MODERN</b> AP1000</span><span><b>BUILT</b> IN VERASUL</span></div><p className="body-copy">Nuclear and hydro together: reliable power for homes, industry and the next wave of Chasmian growth.</p></div><div className="hydro-tile"><img src={asset("/images/hydro-night.jpg")} alt="Illuminated hydroelectric dam at night"/><span>HYDRO // RELIABLE // ABUNDANT</span></div></section>
-  <section className="air-section" id="air"><div className="air-copy"><div className="section-code">03 // MOBILITY CLOUD</div><p>CHASAIR GROUP PLC</p><h2>CHASMIA<br/><em>TAKES FLIGHT.</em></h2><p>A publicly backed, commercially managed airline connecting our people and businesses to opportunity—at home and abroad.</p><div className="fleet"><span>PASSENGERS</span><span>REGIONAL LINKS</span><span>CARGO</span><span>SKILLED JOBS</span></div></div><div className="aircraft-frame"><img src={asset("/images/chasair-a220.png")} alt="Airbus A220 aircraft in flight"/><b>CHASAIR<br/>// READY</b></div><div className="air-invest"><strong>TAKE OFF</strong><span>AIRPORTS. JOBS. CONNECTION.</span><small>CHASMIA OPEN TO THE WORLD</small></div></section>
-  <section className="future-section" id="future"><div className="future-head"><div className="section-code">04 // CHASMIA 2070</div><h2>COMPOUND<br/><em>THE FUTURE.</em></h2><p>Turn finite resources into permanent public capacity.</p></div><div className="runway">{runway.map(([n,t,c])=><article key={n}><span>{n}</span><div><h3>{t}</h3><p>{c}</p></div><b>↗</b></article>)}</div><div className="fund-console"><div><small>WEALTH_FUND://MISSION</small><strong>SAVE</strong><span>RESOURCE WEALTH</span></div><div><strong>INVEST</strong><span>IN PEOPLE + PLACES</span></div><div><strong>ENDURE</strong><span>FOR GENERATIONS</span></div></div></section>
-  <section className="join-cyber" id="join"><div><p>THE NEXT RELEASE</p><h2>BLUESPAN<br/><em>2066.</em></h2></div><div className="join-panel"><span>JOIN THE RE-ELECTION NETWORK</span><form><label className="sr-only" htmlFor="email">Email address</label><input id="email" type="email" placeholder="ENTER EMAIL_"/><button type="button">CONNECT ↗</button></form><small>NO SPAM // JUST SIGNAL</small></div></section>
-  <footer className="cyber-footer"><a href="#top"><img src={asset("/images/liberal-party.png")} alt="Liberal Party"/> JB//2066</a><p>PROGRESS IS A PLATFORM.</p><small>LIBERAL PARTY // BLUESPAN FOR CHASMIA</small></footer>
-</main>}
+        <section className="campaign-priorities campaign-section" id="priorities" aria-labelledby="priorities-title">
+          <div className="campaign-container">
+            <div className="campaign-section-heading centered">
+              <p className="campaign-eyebrow">The next chapter</p>
+              <h2 id="priorities-title">The 2070 priorities</h2>
+              <div className="gold-rule" />
+              <p>A clear plan to turn today’s progress into tomorrow’s opportunity.</p>
+            </div>
+            <div className="campaign-priority-grid">
+              {priorities.map((priority, index) => (
+                <a className="campaign-priority-card" key={priority.id} href={sitePath(`/agenda/#${priority.id}`)}>
+                  <span className="priority-number">0{index + 1}</span>
+                  <h3>{priority.title}</h3>
+                  <p>{priority.summary}</p>
+                  <span className="card-link">Explore the plan <span aria-hidden="true">↗</span></span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="campaign-future campaign-section" aria-labelledby="future-title">
+          <div className="campaign-container campaign-split">
+            <figure className="campaign-feature-image">
+              <img src={asset("/images/hydro-night.jpg")} alt="An illuminated hydroelectric dam at night" width="1200" height="900" loading="lazy" />
+              <figcaption>Reliable energy. Lasting opportunity.</figcaption>
+            </figure>
+            <div className="campaign-feature-copy">
+              <p className="campaign-eyebrow">Built for the long term</p>
+              <h2 id="future-title">Powering a<br />brighter future.</h2>
+              <div className="gold-rule" />
+              <p>Chasmia’s strength is what we build together: good schools, dependable infrastructure, and an economy that gives people room to grow.</p>
+              <p>With nuclear and hydro power, a protected wealth fund, and investment in communities, James Bluespan’s agenda puts our resources to work for generations.</p>
+              <a className="campaign-text-link" href={sitePath("/agenda/#clean-energy")}>Discover the energy plan <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </section>
+
+        <section className="campaign-record campaign-section" aria-labelledby="record-title">
+          <div className="campaign-container">
+            <div className="record-heading">
+              <div><p className="campaign-eyebrow">A foundation to build on</p><h2 id="record-title">A record of delivery.</h2></div>
+              <a className="campaign-text-link" href={sitePath("/about/")}>Meet James <span aria-hidden="true">→</span></a>
+            </div>
+            <div className="campaign-record-grid">
+              <article><span>Public finances</span><h3>Balanced books.<br /> Big ambition.</h3><p>A record centered on a balanced budget, debt-free public finances, and education as the top priority.</p></article>
+              <article><span>Families & schools</span><h3>Support where<br /> it matters.</h3><p>A refundable childcare boost and fully funded lunches for public and charter school students.</p></article>
+              <article><span>Jobs & opportunity</span><h3>Open to<br /> the world.</h3><p>From Kabuki Gardens to ChasAir, a platform for tourism, enterprise, and connections beyond Chasmia.</p></article>
+            </div>
+          </div>
+        </section>
+        <GetInvolved />
+      </main>
+      <CampaignFooter />
+    </div>
+  );
+}
